@@ -1,0 +1,9 @@
+Things the app needs
+-single app page navigation
+-"add to cart" function
+    -changes shopping cart count
+    -also adds item info to a cart object
+-nav bar
+-items page
+-"my cart" page
+-remove item from cart functionality
