@@ -7,3 +7,4 @@ Things the app needs
 -items page
 -"my cart" page
 -remove item from cart functionality
+-type checking the things that get passed as props :^)

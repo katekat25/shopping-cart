@@ -1,18 +1,26 @@
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
+  justify-content: center;
+  min-height: calc(100vh - 3rem - 3rem);
   width: 1000px;
   border: 1px solid red;
   margin: auto;
+  margin-top: calc(4rem);
+  margin-bottom: calc(3rem);
 }
 
-.navbar {
+nav {
   display: flex;
   justify-content: space-between;
   padding-left: 1rem;
   padding-right: 1rem;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: lightgoldenrodyellow;
 }
 
 .button-container {
@@ -30,6 +38,15 @@ h1 {
 }
 
 p,
-button {
+a {
   font-size: 1.5rem;
+}
+
+footer {
+  padding: .5rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: lightblue;
 }

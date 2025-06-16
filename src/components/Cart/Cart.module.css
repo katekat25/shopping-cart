@@ -1,0 +1,10 @@
+.container {
+    border: 1px solid green;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    width: inherit;
+    height: inherit;
+    padding: 20px;
+    place-items: center;
+}
