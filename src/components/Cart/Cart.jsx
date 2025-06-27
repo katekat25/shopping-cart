@@ -1,16 +1,6 @@
-import ItemCard from "../ItemCard/ItemCard";
-import styles from "./Cart.module.css"
-
-function Cart() {
-    return <div className={styles.container}>
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-    </div>
+const Cart = () => {
+    return <>
+    <div>I'm a cart!</div></>
 }
 
 export default Cart;

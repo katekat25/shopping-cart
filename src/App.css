@@ -29,7 +29,8 @@ nav {
 }
 
 h1,
-p {
+p,
+.shop {
   text-align: center;
 }
 
@@ -38,7 +39,8 @@ h1 {
 }
 
 p,
-a {
+a,
+.shop {
   font-size: 1.5rem;
 }
 
@@ -49,4 +51,9 @@ footer {
   bottom: 0;
   width: 100%;
   background-color: lightblue;
+}
+
+.shop {
+  display: flex;
+  justify-content: center;
 }

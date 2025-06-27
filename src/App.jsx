@@ -20,6 +20,7 @@ function App() {
           <div>
             <h1>CoolStuff.com</h1>
             <p>We bring you the coolest stuff, all the time. Shop now, or be a poser. It's your choice.</p>
+            <Link to="shop" className="shop">Shop now</Link>
           </div>
         )}
 
