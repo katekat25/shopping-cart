@@ -1,12 +1,27 @@
 import { Link, Outlet, useLocation } from 'react-router-dom'
+import { createContext, useState } from "react";
 import './App.css'
+import Item from './Item';
 
-function App() {
+export const ShopContext = createContext({
+  products: [new Item("Test", 10, null)],
+  cartItems: [],
+  addToCart: () => { },
+});
+
+export default function App() {
   const location = useLocation();
   const isHomepage = location.pathname === "/";
 
+  const [cartItems, setCartItems] = useState([]);
+  const products = null;
+
+  const addToCart = () => {
+    setCartItems(prevCart => prevCart.push("New item"));
+  }
+
   return (
-    <>
+    <ShopContext.Provider value={{ cartItems, products, addToCart }}>
       <div className="container">
         <nav className="navbar">
           <Link to="/">CoolStuff.com</Link>
@@ -30,8 +45,7 @@ function App() {
           <p>Brought to you by Kate Schumacher</p>
         </footer>
       </div>
-    </>
+    </ShopContext.Provider>
   )
 }
 
-export default App
