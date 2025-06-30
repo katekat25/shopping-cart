@@ -17,7 +17,7 @@ export default function App() {
   const [products, setProducts] = useState([]);
 
   const addToCart = () => {
-    setCartItems(prevCart => prevCart.push("New item"));
+    setCartItems(prevCart => [...prevCart, "New item"]);
   }
 
   useEffect(() => {
