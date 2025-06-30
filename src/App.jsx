@@ -1,10 +1,10 @@
 import { Link, Outlet, useLocation } from 'react-router-dom'
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import './App.css'
 import Item from './Item';
 
 export const ShopContext = createContext({
-  products: [new Item("Test", 10, null)],
+  products: [],
   cartItems: [],
   addToCart: () => { },
 });
@@ -14,11 +14,27 @@ export default function App() {
   const isHomepage = location.pathname === "/";
 
   const [cartItems, setCartItems] = useState([]);
-  const products = null;
+  const [products, setProducts] = useState([]);
 
   const addToCart = () => {
     setCartItems(prevCart => prevCart.push("New item"));
   }
+
+  useEffect(() => {
+    const getAllProducts = async () => {
+      try {
+        const res = await fetch('https://fakestoreapi.com/products');
+        const data = await res.json();
+        setProducts(data);
+        console.log(data);
+      } catch (error) {
+        console.error("Failed to fetch products:", error);
+      }
+    };
+
+    getAllProducts();
+  }, []);
+
 
   return (
     <ShopContext.Provider value={{ cartItems, products, addToCart }}>
