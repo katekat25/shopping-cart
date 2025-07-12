@@ -7,6 +7,7 @@ export const ShopContext = createContext({
   products: [],
   cartItems: [],
   addToCart: () => { },
+  Item: null,
 });
 
 export default function App() {
@@ -25,8 +26,14 @@ export default function App() {
       try {
         const res = await fetch('https://fakestoreapi.com/products');
         const data = await res.json();
-        setProducts(data);
-        console.log(data);
+
+        const productsWithIDs = data.map(product => ({
+        ...product,
+        id: crypto.randomUUID()
+      }));
+
+        setProducts(productsWithIDs);
+        console.log(productsWithIDs);
       } catch (error) {
         console.error("Failed to fetch products:", error);
       }
@@ -37,7 +44,7 @@ export default function App() {
 
 
   return (
-    <ShopContext.Provider value={{ cartItems, products, addToCart }}>
+    <ShopContext.Provider value={{ cartItems, products, addToCart, Item }}>
       <div className="container">
         <nav className="navbar">
           <Link to="/">CoolStuff.com</Link>
