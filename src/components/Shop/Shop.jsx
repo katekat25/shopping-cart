@@ -4,12 +4,12 @@ import styles from "./Shop.module.css"
 import { ShopContext } from "../../App";
 
 function Shop() {
-    const { products } = useContext(ShopContext);
+    const { products, addToCart } = useContext(ShopContext);
 
     return (
         <div className={styles.container}>
             {products.map((product) => (
-                <ItemCard key={product.id} product={product} />
+                <ItemCard key={product.id} product={product} addToCart={addToCart} />
             ))}
         </div>
     );

@@ -7,6 +7,7 @@ const ItemCard = (props) => {
         <div className={styles.textOverlay}>
             <h3>{props.product.title}</h3>
             <p>${props.product.price}</p>
+            <button onClick={() => props.addToCart(props.product)}>Add to cart</button>
         </div>
     </div>
 }

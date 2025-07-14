@@ -17,8 +17,12 @@ export default function App() {
   const [cartItems, setCartItems] = useState([]);
   const [products, setProducts] = useState([]);
 
-  const addToCart = () => {
-    setCartItems(prevCart => [...prevCart, "New item"]);
+  const addToCart = (item) => {
+    setCartItems(prevCart => {
+      const updatedCart = [...prevCart, item];
+      console.log("Adding to cart:", updatedCart);
+      return updatedCart;
+    });
   }
 
   useEffect(() => {
@@ -28,9 +32,9 @@ export default function App() {
         const data = await res.json();
 
         const productsWithIDs = data.map(product => ({
-        ...product,
-        id: crypto.randomUUID()
-      }));
+          ...product,
+          id: crypto.randomUUID()
+        }));
 
         setProducts(productsWithIDs);
         console.log(productsWithIDs);
