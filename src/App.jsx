@@ -7,6 +7,7 @@ export const ShopContext = createContext({
   products: [],
   cartItems: [],
   addToCart: () => { },
+  removeFromCart: () => { },
   Item: null,
 });
 
@@ -18,11 +19,16 @@ export default function App() {
   const [products, setProducts] = useState([]);
 
   const addToCart = (item) => {
+    const itemWithId = { ...item, id: crypto.randomUUID() };
     setCartItems(prevCart => {
-      const updatedCart = [...prevCart, item];
+      const updatedCart = [...prevCart, itemWithId];
       console.log("Adding to cart:", updatedCart);
       return updatedCart;
     });
+  }
+
+  const removeFromCart = (itemToRemove) => {
+    setCartItems(prevCart => prevCart.filter(item => item.id !== itemToRemove.id));
   }
 
   useEffect(() => {
@@ -33,7 +39,7 @@ export default function App() {
 
         const productsWithIDs = data.map(product => ({
           ...product,
-          id: crypto.randomUUID()
+          id: null
         }));
 
         setProducts(productsWithIDs);
@@ -48,7 +54,7 @@ export default function App() {
 
 
   return (
-    <ShopContext.Provider value={{ cartItems, products, addToCart, Item }}>
+    <ShopContext.Provider value={{ cartItems, products, addToCart, removeFromCart, Item }}>
       <div className="container">
         <nav className="navbar">
           <Link to="/">CoolStuff.com</Link>
