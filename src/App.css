@@ -21,6 +21,7 @@ nav {
   left: 0;
   right: 0;
   background-color: lightgoldenrodyellow;
+  z-index: 2;
 }
 
 .button-container {
