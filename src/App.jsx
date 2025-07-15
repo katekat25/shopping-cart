@@ -18,10 +18,15 @@ export default function App() {
   const [cartItems, setCartItems] = useState([]);
   const [products, setProducts] = useState([]);
 
-  const addToCart = (item) => {
-    const itemWithId = { ...item, id: crypto.randomUUID() };
+  const addToCart = (item, amount = 1) => {
+    const itemsToAdd = [];
+
+    for (let i = 0; i < amount; i++) {
+      itemsToAdd.push({ ...item, id: crypto.randomUUID() });
+    }
+
     setCartItems(prevCart => {
-      const updatedCart = [...prevCart, itemWithId];
+      const updatedCart = [...prevCart, ...itemsToAdd];
       console.log("Adding to cart:", updatedCart);
       return updatedCart;
     });
