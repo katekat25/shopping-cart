@@ -61,7 +61,15 @@ export default function App() {
           <div className="button-container">
             <a>Profile</a>
             <a>Search</a>
-            <Link to="cart">My cart</Link>
+            <div className="cart-container">
+              <Link to="cart">
+                <div>My cart</div>
+                <img src="src/assets/cart.svg"></img>
+                {cartItems.length > 0 && (
+                  <div className="cart-badge">{cartItems.length}</div>
+                )}
+              </Link>
+            </div>
           </div>
         </nav>
         {isHomepage && (

@@ -12,10 +12,10 @@
 
 nav {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding-left: 1rem;
   padding-right: 1rem;
-  padding: 1rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -26,7 +26,38 @@ nav {
 
 .button-container {
   display: flex;
+  align-items: center;
   gap: 20px;
+}
+
+.cart-container {
+  position: relative;
+}
+
+.cart-container a {
+  display: flex;
+  align-items: center;
+}
+
+.cart-container img {
+  width: 60px;
+  /* border: 1px solid red; */
+}
+
+.cart-badge {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: red;
+  color: white;
+  width: 16px;
+  height: 16px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 h1,
