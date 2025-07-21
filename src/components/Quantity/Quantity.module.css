@@ -1,0 +1,12 @@
+.buttonContainer {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonContainer input {
+  width: 50px;
+  padding: 0.25rem;
+}
