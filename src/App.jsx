@@ -42,6 +42,10 @@ export default function App() {
         const res = await fetch('https://fakestoreapi.com/products');
         const data = await res.json();
 
+        data.forEach(element => {
+          element.price = element.price.toLocaleString("en", { minimumFractionDigits: 2 });
+        });
+
         const productsWithIDs = data.map(product => ({
           ...product,
           id: null
