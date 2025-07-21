@@ -68,8 +68,9 @@ export default function App() {
         <nav className="navbar">
           <Link to="/">CoolStuff.com</Link>
           <div className="button-container">
-            <a>Profile</a>
-            <a>Search</a>
+            <Link to="shop">
+              <div>Shop</div>
+            </Link>
             <div className="cart-container">
               <Link to="cart">
                 <div>My cart</div>
