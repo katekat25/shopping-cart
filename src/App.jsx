@@ -19,16 +19,18 @@ export default function App() {
   const [products, setProducts] = useState([]);
 
   const addToCart = (item, amount = 1) => {
-    const itemsToAdd = [];
-
-    for (let i = 0; i < amount; i++) {
-      itemsToAdd.push({ ...item, id: crypto.randomUUID() });
-    }
-
     setCartItems(prevCart => {
-      const updatedCart = [...prevCart, ...itemsToAdd];
-      console.log("Adding to cart:", updatedCart);
-      return updatedCart;
+      const existingItem = prevCart.find(cartItem => cartItem.id === item.id)
+
+      if (existingItem) {
+        return prevCart.map(cartItem => {
+          cartItem.id === item.id
+          ? {...cartItem, quantity: amount}
+          : cartItem
+        })
+      } else {
+        return [...prevCart, { ...item, quantity: amount }];
+      }
     });
   }
 
@@ -46,13 +48,14 @@ export default function App() {
           element.price = element.price.toLocaleString("en", { minimumFractionDigits: 2 });
         });
 
-        const productsWithIDs = data.map(product => ({
+        const productsWithExtraData = data.map(product => ({
           ...product,
-          id: null
+          id: crypto.randomUUID(),
+          quantity: 0
         }));
 
-        setProducts(productsWithIDs);
-        console.log(productsWithIDs);
+        setProducts(productsWithExtraData);
+        console.log(productsWithExtraData);
       } catch (error) {
         console.error("Failed to fetch products:", error);
       }

@@ -2,9 +2,10 @@ import { useContext } from "react";
 import { ShopContext } from "../../App";
 import styles from "./Cart.module.css"
 import { Link } from "react-router-dom";
+import Quantity from "../Quantity/Quantity";
 
 const Cart = () => {
-    const { cartItems, removeFromCart } = useContext(ShopContext);
+    const { cartItems, removeFromCart, addToCart } = useContext(ShopContext);
     return <>
         <div className={styles.container}>
             {cartItems.length === 0 ? (
@@ -13,6 +14,7 @@ const Cart = () => {
                 cartItems.map((item) => (
                     <div>
                         <h3>{item.title}</h3>
+                        <Quantity addToCart={addToCart}></Quantity>
                         <button onClick={() => removeFromCart(item)}>Remove item</button>
                     </div>
                 ))
