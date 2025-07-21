@@ -2,7 +2,7 @@ import styles from './Quantity.module.css'
 import { useState } from 'react';
 
 const Quantity = (props) => {
-    const [quantity, setQuantity] = useState(1);
+    const [quantity, setQuantity] = useState(props.quantity || 1);
 
     const handleAddToCart = (e) => {
         e.preventDefault();
