@@ -20,19 +20,19 @@ export default function App() {
 
   const addToCart = (item, amount = 1) => {
     setCartItems(prevCart => {
-      const existingItem = prevCart.find(cartItem => cartItem.id === item.id)
+      const existingItem = prevCart.find(cartItem => cartItem.id === item.id);
 
       if (existingItem) {
-        return prevCart.map(cartItem => {
+        return prevCart.map(cartItem =>
           cartItem.id === item.id
-            ? { ...cartItem, quantity: amount }
+            ? { ...cartItem, quantity: amount } // Replace with new amount
             : cartItem
-        })
+        );
       } else {
         return [...prevCart, { ...item, quantity: amount }];
       }
     });
-  }
+  };
 
   const removeFromCart = (itemToRemove) => {
     setCartItems(prevCart => prevCart.filter(item => item.id !== itemToRemove.id));
