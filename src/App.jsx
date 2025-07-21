@@ -25,8 +25,8 @@ export default function App() {
       if (existingItem) {
         return prevCart.map(cartItem => {
           cartItem.id === item.id
-          ? {...cartItem, quantity: amount}
-          : cartItem
+            ? { ...cartItem, quantity: amount }
+            : cartItem
         })
       } else {
         return [...prevCart, { ...item, quantity: amount }];
@@ -64,6 +64,7 @@ export default function App() {
     getAllProducts();
   }, []);
 
+  const getCartLength = () => cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
     <ShopContext.Provider value={{ cartItems, products, addToCart, removeFromCart, Item }}>
@@ -78,8 +79,8 @@ export default function App() {
               <Link to="cart">
                 <div>My cart</div>
                 <img src="src/assets/cart.svg"></img>
-                {cartItems.length > 0 && (
-                  <div className="cart-badge">{cartItems.length}</div>
+                {getCartLength() > 0 && (
+                  <div className="cart-badge">{getCartLength()}</div>
                 )}
               </Link>
             </div>
