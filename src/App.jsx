@@ -2,6 +2,9 @@ import { Link, Outlet, useLocation } from 'react-router-dom'
 import { createContext, useEffect, useState } from "react";
 import './App.css'
 import Item from './Item';
+import Icon from '@mdi/react';
+import { mdiShoppingOutline } from '@mdi/js';
+import { mdiCart } from '@mdi/js';
 
 export const ShopContext = createContext({
   products: [],
@@ -70,19 +73,24 @@ export default function App() {
     <ShopContext.Provider value={{ cartItems, products, addToCart, removeFromCart, Item }}>
       <div className="container">
         <nav className="navbar">
-          <Link to="/" className="logo-link">CoolStuff.com</Link>
+          <div className="logo-wrapper">
+            <Link to="/" className="logo-link">
+              <Icon path={mdiShoppingOutline} size={1} />
+              <span>CoolStuff.com</span>
+            </Link>
+          </div>
           <div className="button-container">
             <Link to="shop">
               <div>Shop</div>
             </Link>
             <div className="cart-container">
-              <Link to="cart">
+              <Link to="cart" className="cart-link">
                 <div>My cart</div>
-                <img src="src/assets/cart.svg"></img>
-                {getCartLength() > 0 && (
-                  <div className="cart-badge">{getCartLength()}</div>
-                )}
+                <Icon path={mdiCart} size={1} />
               </Link>
+              {getCartLength() > 0 && (
+                <div className="cart-badge">{getCartLength()}</div>
+              )}
             </div>
           </div>
         </nav>

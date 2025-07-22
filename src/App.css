@@ -7,13 +7,11 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-/* Layout container */
 .container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: calc(100vh - 4rem);
-  /* Simplified */
   width: 1000px;
   margin: 2rem auto;
   padding: 0 4rem;
@@ -21,7 +19,6 @@ body {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-/* Nav bar */
 nav {
   height: 4rem;
   display: flex;
@@ -31,16 +28,23 @@ nav {
 }
 
 .logo-link {
-  font-family: "Lora", serif;
-  /* Optional: gives it more brand feel */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-weight: 600;
   font-size: 1.5rem;
+  color: black;
   transition: color 0.3s ease-in-out;
 }
 
 .logo-link:hover {
   color: #6366f1;
-  /* Indigo-500 */
+}
+
+.logo-link svg,
+.logo-link span {
+  color: inherit;
+  transition: color 0.3s ease-in-out;
 }
 
 .button-container {
@@ -49,7 +53,17 @@ nav {
   gap: 20px;
 }
 
-.button-container div {
+.button-container a {
+  color: black;
+  transition: color 0.3s ease-in-out;
+}
+
+.button-container a:hover {
+  color: #6366f1;
+}
+
+.button-container a svg {
+  color: inherit;
   transition: color 0.3s ease-in-out;
 }
 
@@ -60,10 +74,21 @@ nav {
 .cart-container a {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
 }
 
-.cart-container img {
-  width: 60px;
+.cart-link {
+  color: black;
+  transition: color 0.3s ease-in-out;
+}
+
+.cart-link:hover {
+  color: #6366f1;
+}
+
+.cart-link svg {
+  color: inherit;
+  transition: color 0.3s ease-in-out;
 }
 
 .cart-badge {
@@ -126,18 +151,11 @@ footer p,
   background-color: #4f46e5;
 }
 
-/* Footer */
 footer {
   height: 3rem;
   padding: 0.5rem;
   width: 100%;
   text-align: center;
-}
-
-/* Link styles */
-a:hover>div {
-  color: #6366f1;
-
 }
 
 a:visited {
