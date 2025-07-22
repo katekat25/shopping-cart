@@ -70,7 +70,7 @@ export default function App() {
     <ShopContext.Provider value={{ cartItems, products, addToCart, removeFromCart, Item }}>
       <div className="container">
         <nav className="navbar">
-          <Link to="/">CoolStuff.com</Link>
+          <Link to="/" className="logo-link">CoolStuff.com</Link>
           <div className="button-container">
             <Link to="shop">
               <div>Shop</div>
@@ -89,8 +89,8 @@ export default function App() {
         {isHomepage && (
           <div>
             <h1>CoolStuff.com</h1>
-            <p>We bring you the coolest stuff, all the time. Shop now, or be a poser. It's your choice.</p>
-            <Link to="shop" className="shop">Shop now</Link>
+            <p className="tagline">We bring you the coolest stuff, all the time. Shop now, or be a poser. It's your choice.</p>
+            <Link to="shop" className="shop-button">Shop now</Link>
           </div>
         )}
 

@@ -7,7 +7,6 @@ import Quantity from "../Quantity/Quantity";
 const Cart = () => {
     const { cartItems, removeFromCart, addToCart } = useContext(ShopContext);
 
-    // Calculate total price of all items
     const total = cartItems.reduce((sum, item) => {
         return sum + item.quantity * Number(item.price.replace(/,/g, ""));
     }, 0);
