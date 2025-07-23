@@ -28,7 +28,7 @@ export default function App() {
       if (existingItem) {
         return prevCart.map(cartItem =>
           cartItem.id === item.id
-            ? { ...cartItem, quantity: amount } // Replace with new amount
+            ? { ...cartItem, quantity: amount }
             : cartItem
         );
       } else {

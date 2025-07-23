@@ -6,8 +6,12 @@
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.card:hover .textOverlay {
-  transform: translateY(100%);
+.detailsOverlay {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.card:hover .detailsOverlay {
+  transform: translateY(200%);
   transition: transform 0.5s ease;
 }
 
@@ -25,9 +29,7 @@ img {
   left: 0;
   width: 100%;
   padding: 10px;
-  background: rgba(255, 255, 255, 0.7);
   font-size: 0.85rem;
-  transition: transform 0.3s ease;
 }
 
 .itemName {
@@ -41,4 +43,9 @@ img {
 
 .itemPrice {
   font-size: 1.25rem;
+}
+
+.quantity {
+  /* padding-top: 5px; */
+  /* background: rgba(255, 255, 255, 0.7); */
 }
