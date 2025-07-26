@@ -1,12 +1,54 @@
 .buttonContainer {
   display: flex;
-  gap: 0.5rem;
   margin-top: 0.5rem;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .buttonContainer input {
   width: 50px;
+}
+
+input,
+button {
   padding: 0.25rem;
+  border: none;
+}
+
+input {
+  text-align: end;
+}
+
+.quantity button {
+  background-color: lightgrey;
+}
+
+.leftButton {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  cursor: pointer;
+}
+
+.rightButton {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+}
+
+.leftButton:active,
+.rightButton:active {
+  background-color: grey;
+}
+
+button[type="submit"] {
+  background-color: #6366f1;
+  color: white;
+  border-radius: 5px;
+  font-size: .75rem;
+  padding: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:active {
+  background-color: #4f51d1;
 }
