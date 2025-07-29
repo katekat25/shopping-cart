@@ -25,6 +25,9 @@ nav {
   align-items: center;
   justify-content: space-between;
   z-index: 2;
+  position: sticky;
+  top: 0;
+  background-color: white;
 }
 
 .logo-link {
