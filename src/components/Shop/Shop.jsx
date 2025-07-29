@@ -7,11 +7,14 @@ function Shop() {
     const { products, addToCart } = useContext(ShopContext);
 
     return (
-        <div className={styles.container}>
-            {products.map((product) => (
-                <ItemCard key={product.id} product={product} addToCart={addToCart} />
-            ))}
-        </div>
+        <>
+            <h2 className={styles.title}>Shop</h2>
+            <div className={styles.container}>
+                {products.map((product) => (
+                    <ItemCard key={product.id} product={product} addToCart={addToCart} />
+                ))}
+            </div>
+        </>
     );
 }
 
