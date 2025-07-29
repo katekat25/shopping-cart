@@ -12,11 +12,12 @@ const Cart = () => {
     }, 0);
 
     return (
-        <div>
+        <div className={styles.container}>
+            <h2 className={styles.title}>My Cart</h2>
             {cartItems.length === 0 ? (
                 <p>Your cart is empty. <Link to="/shop">Shop now</Link></p>
             ) : (
-                <div className={styles.container}>
+                <div className={styles.infoContainer}>
                     <div className={styles.shippingInfo}>
                         <h2>Shipping information</h2>
                         <form>

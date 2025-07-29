@@ -1,8 +1,25 @@
+
 .container {
     display: flex;
     justify-content: space-between;
-    border: 1px solid red;
+    position: relative;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
 }
+
+.infoContainer {
+    display: flex;
+}
+
+.title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 3rem;
+    font-family: "Lora", serif;
+}
+
 
 .shippingInfo {
     border: 1px solid blue;
