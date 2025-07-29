@@ -96,8 +96,8 @@ nav {
 
 .cart-badge {
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: -5px;
+  right: -5px;
   background-color: red;
   color: white;
   width: 16px;
