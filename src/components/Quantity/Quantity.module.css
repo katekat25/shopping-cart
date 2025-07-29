@@ -40,15 +40,6 @@ input {
   background-color: grey;
 }
 
-button[type="submit"] {
-  background-color: #6366f1;
-  color: white;
-  border-radius: 5px;
-  font-size: .75rem;
-  padding: 5px;
-  cursor: pointer;
-}
-
 button[type="submit"]:active {
   background-color: #4f51d1;
 }

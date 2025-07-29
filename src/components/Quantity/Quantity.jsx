@@ -23,7 +23,6 @@ const Quantity = (props) => {
                     />
                     <button type="submit" className={styles.rightButton} onClick={() => setQuantity(prev => Number(prev) + 1)}>+</button>
                 </div>
-                {/* <button type="submit">Add to cart</button> */}
             </div>
         </form>
     </>
