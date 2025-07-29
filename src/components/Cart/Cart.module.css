@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid red;
+}
+
+.shippingInfo {
+    border: 1px solid blue;
+    width: 60%;
+}
+
+.orderSummary {
+    border: 1px solid green;
+    /* width: 40%; */
+}
