@@ -1,7 +1,12 @@
 import styles from './ItemCard.module.css'
 import Quantity from '../Quantity/Quantity';
+import { ShopContext } from "../../App";
+import { useContext } from "react";
+
 
 const ItemCard = (props) => {
+    const { updateProductQuantity } = useContext(ShopContext);
+
     return <>
         <div>
             <div className={styles.card}>
@@ -15,7 +20,10 @@ const ItemCard = (props) => {
                     </div>
                 </div>
             </div >
-            <Quantity product={props.product} addToCart={props.addToCart}></Quantity>
+            <Quantity
+                product={props.product}
+                addToCart={props.addToCart}
+                updateProductQuantity={updateProductQuantity}></Quantity>
         </div>
     </>
 }

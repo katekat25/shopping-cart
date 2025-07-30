@@ -11,6 +11,7 @@ export const ShopContext = createContext({
   cartItems: [],
   addToCart: () => { },
   removeFromCart: () => { },
+  updateProductQuantity: () => { },
   Item: null,
 });
 
@@ -41,6 +42,16 @@ export default function App() {
     setCartItems(prevCart => prevCart.filter(item => item.id !== itemToRemove.id));
   }
 
+  const updateProductQuantity = (productId, newQuantity) => {
+    setProducts(prevProducts =>
+      prevProducts.map(product =>
+        product.id === productId
+          ? { ...product, quantity: newQuantity }
+          : product
+      )
+    );
+  };
+
   useEffect(() => {
     const getAllProducts = async () => {
       try {
@@ -70,7 +81,7 @@ export default function App() {
   const getCartLength = () => cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <ShopContext.Provider value={{ cartItems, products, addToCart, removeFromCart, Item }}>
+    <ShopContext.Provider value={{ cartItems, products, addToCart, removeFromCart, updateProductQuantity, Item }}>
       <div className="container">
         <nav className="navbar">
           <div className="logo-wrapper">
