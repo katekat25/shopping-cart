@@ -28,5 +28,8 @@
 
 .orderSummary {
     border: 1px solid green;
-    /* width: 40%; */
+}
+
+.shopLink {
+    color: #6366f1 !important;
 }

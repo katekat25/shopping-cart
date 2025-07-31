@@ -15,7 +15,7 @@ const Cart = () => {
         <div className={styles.container}>
             <h2 className={styles.title}>My Cart</h2>
             {cartItems.length === 0 ? (
-                <p>Your cart is empty. <Link to="/shop">Shop now</Link></p>
+                <p>Your cart is empty. <Link to="/shop" className={styles.shopLink}>Shop now</Link></p>
             ) : (
                 <div className={styles.infoContainer}>
                     <div className={styles.shippingInfo}>
