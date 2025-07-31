@@ -1,3 +1,5 @@
+// ISSUE: When an item is added and removed from the shop page, the item still shows up in the order summary on the cart page. Fix today!
+
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import { createContext, useEffect, useState } from "react";
 import './App.css'
