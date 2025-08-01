@@ -64,3 +64,25 @@
 .shopLink {
     color: #6366f1 !important;
 }
+
+.checkOutButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 3rem;
+  padding: 1rem;
+  margin: auto;
+  font-size: 1.25rem;
+  color: white !important;
+  background-color: #0d6efd;
+  border: none;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.checkOutButton:hover {
+  background-color: #4f46e5;
+}

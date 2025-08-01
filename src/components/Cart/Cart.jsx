@@ -53,6 +53,7 @@ const Cart = () => {
             <h2>
               Total: ${total.toLocaleString("en", { minimumFractionDigits: 2 })}
             </h2>
+            <button className={styles.checkOutButton}>Check out</button>
           </div>
         </div>
       )}
