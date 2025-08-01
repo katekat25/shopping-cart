@@ -5,8 +5,7 @@ import { createContext, useEffect, useState } from "react";
 import './App.css'
 import Item from './Item';
 import Icon from '@mdi/react';
-import { mdiShoppingOutline } from '@mdi/js';
-import { mdiCart } from '@mdi/js';
+import { mdiShoppingOutline, mdiCart } from '@mdi/js';
 
 export const ShopContext = createContext({
   products: [],
@@ -14,7 +13,6 @@ export const ShopContext = createContext({
   addToCart: () => { },
   removeFromCart: () => { },
   updateProductQuantity: () => { },
-  Item: null,
 });
 
 export default function App() {
@@ -74,7 +72,6 @@ export default function App() {
         }));
 
         setProducts(productsWithExtraData);
-        console.log(productsWithExtraData);
       } catch (error) {
         console.error("Failed to fetch products:", error);
       }
