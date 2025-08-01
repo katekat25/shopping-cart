@@ -1,4 +1,3 @@
-
 .container {
     display: flex;
     flex-direction: column;
@@ -10,7 +9,6 @@
 }
 
 .emptyCart {
-    /* border: 1px solid red; */
     flex-grow: 1;
     display: flex;
     align-items: center;
@@ -61,10 +59,19 @@
 .cartItemBottom {
     display: flex;
     align-items: center;
+    width: 300px;
+    justify-content: space-between;
+    margin-top: 10px;
 }
 
 .shopLink {
     color: #6366f1 !important;
+}
+
+hr {
+    border-color: lightgrey;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .checkOutButton {
