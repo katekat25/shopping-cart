@@ -22,6 +22,7 @@ const ItemCard = (props) => {
             </div >
             <Quantity
                 product={props.product}
+                quantity={props.product.quantity}
                 addToCart={props.addToCart}
                 updateProductQuantity={updateProductQuantity}></Quantity>
         </div>

@@ -26,6 +26,9 @@ export default function App() {
 
   const addToCart = (item, amount = 1) => {
     setCartItems(prevCart => {
+      if (amount === 0) {
+        return prevCart.filter(cartItem => cartItem.id !== item.id);
+      }
       const existingItem = prevCart.find(cartItem => cartItem.id === item.id);
 
       if (existingItem) {
