@@ -22,7 +22,7 @@ const Cart = () => {
       ) : (
         <div className={styles.infoContainer}>
           <div className={styles.shippingInfo}>
-            <h2>Shipping information</h2>
+            <h2 className={styles.subheading}>Shipping information</h2>
             <form>
               <input type="text" />
               <input type="email" />
@@ -31,23 +31,24 @@ const Cart = () => {
             </form>
           </div>
           <div className={styles.orderSummary}>
-            <h2>Order Summary</h2>
+            <h2 className={styles.subheading}>Order Summary</h2>
             {cartItems.map((item) => (
-              <div key={item.id}>
-                <h3>{item.title}</h3>
-                <Quantity
-                  product={item}
-                  quantity={item.quantity}
-                  updateProductQuantity={updateProductQuantity}
-                  addToCart={addToCart}
-                />
-                <h3>x{item.quantity}</h3>
-                <h3>
-                  ${(
-                    item.quantity * Number(item.price.replace(/,/g, ""))
-                  ).toLocaleString("en", { minimumFractionDigits: 2 })}
-                </h3>
-                <button onClick={() => removeFromCart(item)}>Remove item</button>
+              <div className={styles.cartItem} key={item.id}>
+                <h3>{item.title} x{item.quantity}</h3>
+                <div className={styles.cartItemBottom}>
+                  <Quantity
+                    product={item}
+                    quantity={item.quantity}
+                    updateProductQuantity={updateProductQuantity}
+                    addToCart={addToCart}
+                  />
+                  <h3 className={styles.price}>
+                    ${(
+                      item.quantity * Number(item.price.replace(/,/g, ""))
+                    ).toLocaleString("en", { minimumFractionDigits: 2 })}
+                  </h3>
+                  <button onClick={() => removeFromCart(item)}>Remove item</button>
+                </div>
               </div>
             ))}
             <hr />

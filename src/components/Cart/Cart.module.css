@@ -11,6 +11,9 @@
 
 .infoContainer {
     display: flex;
+    margin-top: 20px;
+    padding: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .title {
@@ -19,14 +22,33 @@
     font-family: "Lora", serif;
 }
 
+.subheading {
+    font-family: "Lora", serif;
+    margin-bottom: 20px;
+}
 
 .shippingInfo {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: 60%;
 }
 
 .orderSummary {
-    border: 1px solid green;
+    /* font-weight: 800; */
+}
+
+.cartItem {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cartItem > h3,
+.price {
+    font-weight: 400;
+}
+
+.cartItemBottom {
+    display: flex;
+    align-items: center;
 }
 
 .shopLink {
