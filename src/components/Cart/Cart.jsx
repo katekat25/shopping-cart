@@ -21,15 +21,6 @@ const Cart = () => {
         </div>
       ) : (
         <div className={styles.infoContainer}>
-          <div className={styles.shippingInfo}>
-            <h2 className={styles.subheading}>Shipping information</h2>
-            <form>
-              <input type="text" />
-              <input type="email" />
-              <input type="text" />
-              <input type="number" />
-            </form>
-          </div>
           <div className={styles.orderSummary}>
             <h2 className={styles.subheading}>Order Summary</h2>
             {cartItems.map((item) => (
