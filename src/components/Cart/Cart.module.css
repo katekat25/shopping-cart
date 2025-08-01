@@ -19,6 +19,10 @@
 
 .infoContainer {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    flex-grow: 1;
     margin-top: 20px;
     padding: 20px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -35,18 +39,16 @@
     margin-bottom: 20px;
 }
 
-.shippingInfo {
-    /* border: 1px solid blue; */
-    width: 60%;
-}
-
-.orderSummary {
-    /* font-weight: 800; */
-}
-
 .cartItem {
     margin-top: 10px;
     margin-bottom: 10px;
+    display: flex;
+}
+
+.itemImage {
+    width: 150px;
+    height: 150px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .cartItem > h3,

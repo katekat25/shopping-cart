@@ -25,23 +25,30 @@ const Cart = () => {
             <h2 className={styles.subheading}>Order Summary</h2>
             {cartItems.map((item) => (
               <div className={styles.cartItem} key={item.id}>
-                <h3>{item.title} x{item.quantity}</h3>
-                <div className={styles.cartItemBottom}>
-                  <Quantity
-                    product={item}
-                    quantity={item.quantity}
-                    updateProductQuantity={updateProductQuantity}
-                    addToCart={addToCart}
-                  />
-                  <h3 className={styles.price}>
-                    ${(
-                      item.quantity * Number(item.price.replace(/,/g, ""))
-                    ).toLocaleString("en", { minimumFractionDigits: 2 })}
-                  </h3>
-                  <button onClick={() => removeFromCart(item)}>Remove item</button>
+                {/* <div className={styles.}></div> */}
+                <img className={styles.itemImage} src={item.image} alt={item.title} />
+                <div className={styles.cartItemRight}>
+                  <h3>{item.title} x{item.quantity}</h3>
+                  <div className={styles.cartItemBottom}>
+                    <Quantity
+                      product={item}
+                      quantity={item.quantity}
+                      updateProductQuantity={updateProductQuantity}
+                      addToCart={addToCart}
+                    />
+                    <h3 className={styles.price}>
+                      ${(
+                        item.quantity * Number(item.price.replace(/,/g, ""))
+                      ).toLocaleString("en", { minimumFractionDigits: 2 })}
+                    </h3>
+                    <button onClick={() => removeFromCart(item)}>Remove item</button>
+                  </div>
                 </div>
               </div>
             ))}
+
+          </div>
+          <div>
             <hr />
             <h2>
               Total: ${total.toLocaleString("en", { minimumFractionDigits: 2 })}
