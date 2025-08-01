@@ -1,11 +1,20 @@
 import { useContext } from "react";
 import { ShopContext } from "../../App";
+import { useEffect } from "react";
 import styles from "./Cart.module.css";
 import { Link } from "react-router-dom";
 import Quantity from "../Quantity/Quantity";
 
 const Cart = () => {
     const { cartItems, removeFromCart, addToCart } = useContext(ShopContext);
+
+    useEffect(() => {
+        cartItems.forEach(item => {
+            if (item.quantity <= 0) {
+                removeFromCart(item);
+            }
+        })
+    }, [cartItems]);
 
     const total = cartItems.reduce((sum, item) => {
         return sum + item.quantity * Number(item.price.replace(/,/g, ""));
