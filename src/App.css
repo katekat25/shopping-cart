@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
 body {
-  background-image: url('public/gradient.webp');
+  background-image: url('/gradient.webp');
   background-size: cover;
   background-attachment: fixed;
   font-family: "Inter", sans-serif;
