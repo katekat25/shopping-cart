@@ -42,8 +42,18 @@ export default function App() {
   };
 
   const removeFromCart = (itemToRemove) => {
+    console.log("Removing item from cart:", itemToRemove.id);
+
     setCartItems(prevCart => prevCart.filter(item => item.id !== itemToRemove.id));
-  }
+
+    setProducts(prevProducts =>
+      prevProducts.map(product =>
+        product.id === itemToRemove.id
+          ? { ...product, quantity: 0 }
+          : product
+      )
+    );
+  };
 
   const updateProductQuantity = (productId, newQuantity) => {
     setProducts(prevProducts =>
