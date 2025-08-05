@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import { ShopContext } from "../../App";
 import styles from "./Cart.module.css";
 import { Link } from "react-router-dom";
@@ -7,10 +7,12 @@ import Quantity from "../Quantity/Quantity";
 const Cart = () => {
   const { cartItems, removeFromCart, addToCart, updateProductQuantity } = useContext(ShopContext);
 
-  const total = cartItems.reduce(
-    (sum, item) => sum + item.quantity * Number(item.price.replace(/,/g, "")),
-    0
-  );
+  const total = useMemo(() => {
+    return cartItems.reduce(
+      (sum, item) => sum + item.quantity * Number(item.price.replace(/,/g, "")),
+      0
+    )
+  }, [cartItems]);
 
   return (
     <div className={styles.container}>
