@@ -1,13 +1,46 @@
-# React + Vite
+# 🛒 Shopping Cart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A mock e-commerce site built with React that allows users to browse items and manage a shopping cart in real time.
 
-Currently, two official plugins are available:
+![Demo](./public/demo.gif)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔗 [Live Demo on Netlify](https://coolstuffshop.netlify.app/)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# shopping-cart
+## ⚙️ Technologies Used
+
+- React  
+- JavaScript (ES6+)  
+- CSS Modules  
+- Vite
+
+---
+
+## ✨ Features
+
+- Dynamic cart functionality (add, remove, and update item quantities)  
+- Real-time cart total updates using `useMemo`  
+- Modular component-based design  
+- Product data fetched from the [FakeStoreAPI](https://fakestoreapi.com/)  
+- Responsive UI structure in progress
+
+---
+
+## 📚 What I Learned
+
+- Deepened understanding of React component structure and props  
+- Improved state management using `useContext`  
+- Practiced conditional rendering and dynamic UI updates  
+- Used `useMemo` for efficient total price calculation  
+- Gained experience deploying React apps with Netlify  
+- Integrated external APIs into a React project
+
+---
+
+## 🚧 Future Improvements
+
+- Add lazy loading to product images for performance optimization  
+- Implement smooth loading animations and transitions  
+- Make the layout fully responsive for mobile and tablet devices  
+- Add filtering/sorting options
